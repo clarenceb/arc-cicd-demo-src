@@ -20,6 +20,9 @@ echo $TASKNAME
 echo $DOCKER_FILE
 
 set -euxo pipefail  # fail on error
+
+echo "work around permission issue, see: https://github.blog/2022-04-12-git-security-vulnerability-announced/"
+git config --global --add safe.directory /github/workspace
   
 # Generate an tag with a reproducible checksum of all files in . by doing a checksum of all files
 # in alphabetical order, then another checksum of their names and checksums.
